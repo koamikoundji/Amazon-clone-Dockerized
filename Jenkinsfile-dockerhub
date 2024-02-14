@@ -42,7 +42,7 @@ pipeline {
        }
         stage('push image') {
             steps{
-                sh 'docker push $APP_NAME:$BUILD_NUMBER'
+                sh 'docker push docker.ion/justin1998/koami-amazon:$APP_NAME-$BUILD_NUMBER'
             }
         }
         stage('Trigger ManifestUpdate') {
