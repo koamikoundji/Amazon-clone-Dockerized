@@ -6,7 +6,7 @@ pipeline {
      }
     environment {
     DOCKERHUB_CREDENTIALS = credentials('koami-dockerhub')
-    APP_NAME = "koami-amazon"
+    APP_NAME = "koami/amazon"
     }
     stages { 
         stage('SCM Checkout') {
@@ -42,7 +42,7 @@ pipeline {
        }
         stage('push image') {
             steps{
-                sh 'docker push docker.ion/justin1998/koami-amazon:$APP_NAME-$BUILD_NUMBER'
+                sh 'docker push docker.io/justin1998/koami-amazon:$APP_NAME-$BUILD_NUMBER'
             }
         }
         stage('Trigger ManifestUpdate') {
