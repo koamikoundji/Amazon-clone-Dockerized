@@ -6,7 +6,7 @@ pipeline {
      }
     environment {
     DOCKERHUB_CREDENTIALS = credentials('koami-dockerhub')
-    APP_NAME = "amazon"
+    APP_NAME = "koami-amazon"
     }
     stages { 
         stage('SCM Checkout') {
